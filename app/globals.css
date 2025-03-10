@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 350 30% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 350 30% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 350 30% 57%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-rosegold-400;
+    background: linear-gradient(to bottom right, #000000, #0a0a0a, #000000);
+    background-attachment: fixed;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Quicksand", sans-serif;
+    @apply text-purple-800;
+  }
+}
+
+/* Enhanced metallic effects */
+.metallic-rosegold {
+  background: linear-gradient(135deg, #b76e79 0%, #e0a5a5 25%, #b76e79 50%, #e0a5a5 75%, #b76e79 100%);
+  background-size: 200% 200%;
+  box-shadow: 0 0 15px rgba(183, 110, 121, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.metallic-purple {
+  background: linear-gradient(135deg, #6d28d9 0%, #a78bfa 25%, #6d28d9 50%, #a78bfa 75%, #6d28d9 100%);
+  background-size: 200% 200%;
+  box-shadow: 0 0 15px rgba(109, 40, 217, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.metallic-black {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #000000 50%, #1a1a1a 75%, #000000 100%);
+  background-size: 200% 200%;
+  position: relative;
+  overflow: hidden;
+}
+
+.shadow-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.hover-shine::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine-sweep 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes shine-sweep {
+  0% {
+    transform: rotate(30deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(30deg) translateX(100%);
+  }
+}
+
+/* Custom gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #5b21b6, #7c3aed, #5b21b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  /* Removing the animation */
+}
+
+/* Enhanced link hover effect */
+.hover-link {
+  @apply transition-all duration-300;
+}
+
+.hover-link:hover {
+  @apply text-rosegold-400;
+  text-shadow: 0 0 10px rgba(183, 110, 121, 0.5);
+}
+
+/* Enhanced button styles */
+.btn-outline-purple {
+  @apply bg-black text-white border-2 border-purple-600 rounded-full transition-colors duration-300;
+}
+
+.btn-outline-purple:hover {
+  @apply bg-black text-rosegold-400;
+  text-shadow: 0 0 10px rgba(183, 110, 121, 0.5);
+  background-color: black !important;
+}
+
+/* Primary button style */
+.btn-primary {
+  @apply bg-black text-white border-2 border-purple-600 rounded-full transition-colors duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-black text-rosegold-400;
+  text-shadow: 0 0 10px rgba(183, 110, 121, 0.5);
+  background-color: black !important;
+}
+
+/* Add these custom button styles */
+.custom-btn-primary {
+  @apply bg-black text-white border-2 border-purple-600 rounded-full transition-colors duration-300;
+}
+
+.custom-btn-primary:hover {
+  @apply bg-black text-rosegold-400;
+  text-shadow: 0 0 10px rgba(183, 110, 121, 0.5);
+  background-color: black !important;
+}
+
+.custom-btn-outline {
+  @apply bg-black text-white border-2 border-purple-600 rounded-full transition-colors duration-300;
+}
+
+.custom-btn-outline:hover {
+  @apply bg-black text-rosegold-400;
+  text-shadow: 0 0 10px rgba(183, 110, 121, 0.5);
+  background-color: black !important;
+}
+
